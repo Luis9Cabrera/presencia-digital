@@ -1,0 +1,73 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+    <div
+        class="py-8 md:py-12 bg-gradient-to-b from-gray-50 to-white min-h-screen"
+    >
+        <article
+            class="prose prose-lg md:prose-xl mx-auto p-6 md:p-10 bg-white shadow-2xl rounded-3xl max-w-4xl border border-gray-100"
+        >
+            <!-- Encabezado Mejorado -->
+            <div class="text-center mb-12">
+                <div
+                    class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-2xl mb-6"
+                >
+                    <span class="text-3xl">🗺️</span>
+                </div>
+                <h1
+                    class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 to-indigo-800 bg-clip-text text-transparent mb-4 tracking-tight"
+                >
+                    {frontmatter.title}
+                </h1>
+                {
+                    frontmatter.description && (
+                        <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                            {frontmatter.description}
+                        </p>
+                    )
+                }
+            </div>
+
+            <!-- Contenedor de Contenido Mejorado -->
+            <div
+                class="prose-headings:font-bold prose-headings:tracking-tight prose-p:text-gray-700 prose-ul:marker:text-blue-500 prose-ol:marker:text-blue-500 prose-li:marker:font-bold prose-headings:scroll-mt-24
+                        prose-h2:text-2xl prose-h2:text-blue-800 prose-h2:border-b prose-h2:pb-3 prose-h2:border-gray-200 prose-h2:mt-10
+                        prose-h3:text-xl prose-h3:text-blue-700 prose-h3:mt-8
+                        prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-a:font-medium prose-a:underline prose-a:decoration-blue-300 hover:prose-a:decoration-blue-600 prose-a:transition-colors
+                        prose-img:rounded-2xl prose-img:shadow-lg prose-img:border prose-img:border-gray-200
+                        prose-blockquote:border-l-4 prose-blockquote:border-blue-400 prose-blockquote:bg-blue-50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:italic
+                        prose-strong:text-gray-900 prose-strong:font-bold
+                        prose-hr:border-t-2 prose-hr:border-dashed prose-hr:border-gray-300"
+            >
+                <slot />
+            </div>
+
+            <!-- Sección de Cierre Mejorada -->
+            <div class="mt-16 pt-10 border-t border-gray-200 text-center">
+                <p class="text-gray-600 mb-6 font-medium">
+                    ¿Listo para mejorar la reputación de tu negocio?
+                </p>
+                <a
+                    href="/"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                >
+                    <span class="text-xl">←</span>
+                    Volver al inicio
+                </a>
+                <p class="mt-6 text-sm text-gray-500">
+                    Este contenido se actualizó por última vez el {
+                        new Date().toLocaleDateString("es-ES", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric",
+                        })
+                    }
+                </p>
+            </div>
+        </article>
+    </div>
+</Layout>

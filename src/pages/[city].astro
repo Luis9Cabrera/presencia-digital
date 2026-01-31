@@ -4,23 +4,12 @@ import Hero from "../components/Hero.astro";
 import Problem from "../components/Problem.astro";
 import Solution from "../components/Solution.astro";
 import Benefits from "../components/Benefits.astro";
-import Process from "../components/Process.astro";
 import CTA from "../components/CTA.astro";
 import Pricing from "../components/Pricing.astro";
-import Services from "../components/Services.astro";
 import WhatsappFloat from "../components/WhatsappFloat.astro";
 
-const cities = {
-    cholula: "Cholula",
-    amozoc: "Amozoc",
-    atlixco: "Atlixco",
-    atenco: "Atenco",
-    atzala: "Atzala",
-    san_martin: "San Martín",
-    huejotzingo: "Huejotzingo",
-    tlaxcala: "Tlaxcala",
-    cuetzalan: "Cuetzalan",
-};
+// ¡Importa desde el archivo separado!
+import { cities } from "../data/cities";
 
 export function getStaticPaths() {
     return Object.keys(cities).map((city) => ({
@@ -44,8 +33,6 @@ if (!cityName) {
     <Hero city={cityName} />
     <Problem city={cityName} />
     <Solution city={cityName} />
-    <Services city={cityName} />
-    <Process city={cityName} />
     <Pricing city={cityName} />
     <Benefits city={cityName} />
     <CTA city={cityName} />
