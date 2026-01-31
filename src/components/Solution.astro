@@ -1,0 +1,533 @@
+---
+const { cityName } = Astro.props;
+---
+
+<section class="relative py-24 overflow-hidden">
+    {/* Elementos decorativos de fondo */}
+    <div
+        class="absolute inset-0 bg-linear-to-br from-blue-50 via-white to-cyan-50"
+    >
+    </div>
+    <div
+        class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-blue-400/30 to-transparent"
+    >
+    </div>
+
+    {/* Elementos decorativos flotantes */}
+    <div
+        class="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+        class="absolute bottom-20 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="relative max-w-6xl mx-auto px-6 z-10">
+        {/* Encabezado con cita */}
+        <div class="text-center mb-16">
+            <div
+                class="inline-flex items-center gap-3 bg-linear-to-r from-blue-100/80 to-cyan-100/80 backdrop-blur-sm border border-blue-200/50 rounded-2xl px-8 py-4 mb-8"
+            >
+                <div class="flex items-center gap-3">
+                    <svg
+                        class="w-6 h-6 text-blue-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                        ></path>
+                    </svg>
+                    <span class="text-sm font-semibold text-blue-700"
+                        >Filosofía del servicio</span
+                    >
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto mb-12">
+                <svg
+                    class="w-12 h-12 text-blue-400 mx-auto mb-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                    ></path>
+                </svg>
+                <h2
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight"
+                >
+                    <span class="text-blue-600">No es publicidad,</span><br />
+                    <span
+                        class="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+                        >es visibilidad orgánica</span
+                    >
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Te ayudamos a estar presente exactamente donde tus clientes
+                    potenciales te buscan
+                    {cityName ? ` en ${cityName}` : ""}.
+                </p>
+            </div>
+        </div>
+
+        {/* Beneficios principales (Antes vs Después visual) */}
+        <div class="mb-20">
+            <div
+                class="bg-linear-to-br from-blue-900 to-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden"
+            >
+                {/* Fondo decorativo */}
+                <div
+                    class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+                >
+                </div>
+
+                <div
+                    class="grid md:grid-cols-2 gap-12 items-center relative z-10"
+                >
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">
+                            La diferencia es abismal
+                        </h3>
+                        <p class="text-blue-100 text-lg mb-8 leading-relaxed">
+                            Pasar de ser un punto gris en el mapa a tener un
+                            perfil estrella con fotos, reseñas y botones de
+                            contacto hace que el cliente te elija a ti sin
+                            dudarlo.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <span
+                                    class="bg-blue-500/20 p-2 rounded-lg text-blue-300"
+                                >
+                                    <svg
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path></svg
+                                    >
+                                </span>
+                                <span>Apareces en el mapa cuando te buscan</span
+                                >
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span
+                                    class="bg-blue-500/20 p-2 rounded-lg text-blue-300"
+                                >
+                                    <svg
+                                        class="w-5 h-5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path></svg
+                                    >
+                                </span>
+                                <span>Ganas confianza inmediata</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Placeholder de Comparativa Visual */}
+                    <div class="relative">
+                        {
+                            /* INTENCIÓN: Mockup mostrando un resultado de Google Maps "malo" (sin fotos, datos faltantes) vs uno "bueno" (lleno de estrellas, fotos, botón llamar) */
+                        }
+                        <div
+                            class="w-full h-80 bg-[url('../img/maps-antes-despues.png')] bg-cover bg-center rounded-xl border border-white/10 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Pilares fundamentales */}
+        <div class="mb-16">
+            <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">
+                Los 4 pilares de tu <span class="text-blue-600"
+                    >visibilidad digital</span
+                >
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Google Maps */}
+                <div class="group relative">
+                    <div
+                        class="relative bg-linear-to-br from-white to-blue-50 border-2 border-blue-100 rounded-2xl p-8 h-full hover:border-blue-300 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <div
+                                class="w-16 h-16 bg-linear-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-500"
+                            >
+                                <span class="text-3xl">📍</span>
+                            </div>
+                        </div>
+                        <div class="pt-10 text-center">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">
+                                Presencia en Google Maps
+                            </h4>
+                            <p class="text-gray-600 mb-6">
+                                Apareces correctamente donde la gente busca
+                                "cerca de mí" o por nombre específico.
+                            </p>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-blue-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Ubicación precisa en el mapa</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-blue-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Categorización correcta</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-blue-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Fácil acceso con direcciones</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Horarios Reales */}
+                <div class="group relative">
+                    <div
+                        class="relative bg-linear-to-br from-white to-cyan-50 border-2 border-cyan-100 rounded-2xl p-8 h-full hover:border-cyan-300 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <div
+                                class="w-16 h-16 bg-linear-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform duration-500"
+                            >
+                                <span class="text-3xl">⏰</span>
+                            </div>
+                        </div>
+                        <div class="pt-10 text-center">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">
+                                Horarios Actualizados
+                            </h4>
+                            <p class="text-gray-600 mb-6">
+                                Que sepan cuándo estás abierto y no pierdan el
+                                viaje por información desactualizada.
+                            </p>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-cyan-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Horarios regulares y especiales</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-cyan-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Días festivos marcados</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-cyan-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Evita clientes frustrados</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Fotos de Calidad */}
+                <div class="group relative">
+                    <div
+                        class="relative bg-linear-to-br from-white to-emerald-50 border-2 border-emerald-100 rounded-2xl p-8 h-full hover:border-emerald-300 hover:shadow-xl transitionall duration-500 hover:-translate-y-2"
+                    >
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <div
+                                class="w-16 h-16 bg-linear-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform duration-500"
+                            >
+                                <span class="text-3xl">📸</span>
+                            </div>
+                        </div>
+                        <div class="pt-10 text-center">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">
+                                Imagen Profesional
+                            </h4>
+                            <p class="text-gray-600 mb-6">
+                                Tu local se verá confiable y atractivo con fotos
+                                profesionales de fachada e interior.
+                            </p>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-emerald-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Fotos de alta calidad</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-emerald-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Ángulos estratégicos</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-emerald-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Genera confianza visual</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contacto Fácil */}
+                <div class="group relative">
+                    <div
+                        class="relative bg-linear-to-br from-white to-purple-50 border-2 border-purple-100 rounded-2xl p-8 h-full hover:border-purple-300 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                    >
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <div
+                                class="w-16 h-16 bg-linear-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform duration-500"
+                            >
+                                <span class="text-3xl">📞</span>
+                            </div>
+                        </div>
+                        <div class="pt-10 text-center">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">
+                                Contacto Inmediato
+                            </h4>
+                            <p class="text-gray-600 mb-6">
+                                Te podrán llamar o escribir por WhatsApp con un
+                                solo clic, sin complicaciones.
+                            </p>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-purple-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Botón directo de WhatsApp</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-purple-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Llamada con un toque</span
+                                    >
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg
+                                        class="w-4 h-4 text-purple-500"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-600"
+                                        >Facilita la conversión</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* CTA Final */}
+        <div class="text-center">
+            <div
+                class="inline-flex items-center gap-4 bg-linear-to-r from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl px-8 py-4 mb-8"
+            >
+                <div
+                    class="w-10 h-10 bg-linear-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center"
+                >
+                    <svg
+                        class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                </div>
+                <div class="text-left">
+                    <p class="font-bold text-gray-900">
+                        Sin anuncios pagados, solo visibilidad real
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Tu negocio visible donde realmente importa
+                    </p>
+                </div>
+            </div>
+
+            <a
+                href="#paquetes"
+                class="inline-flex items-center gap-3 bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/30"
+            >
+                <span>Lograr visibilidad orgánica</span>
+                <svg
+                    class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+---
+interface Props {
+    words: string[];
+    interval?: number;
+}
+
+const { words, interval = 2500 } = Astro.props;
+---
+
+<span
+    class="inline-grid text-left"
+    data-rotator
+    data-words={JSON.stringify(words)}
+    data-interval={interval}
+>
+    <span
+        class="invisible font-semibold col-start-1 row-start-1 pointer-events-none"
+    >
+        {words.reduce((a, b) => (a.length > b.length ? a : b))}
+    </span>
+
+    <span
+        class="rotator-text text-center font-semibold text-amber-400 col-start-1 row-start-1 transition-all duration-500 ease-in-out transform translate-y-0 opacity-100"
+    >
+        {words[0]}
+    </span>
+</span>
+
+<script>
+    function initRotators() {
+        const rotators = document.querySelectorAll("[data-rotator]");
+
+        rotators.forEach((rotator) => {
+            const textEl = rotator.querySelector(
+                ".rotator-text",
+            ) as HTMLElement;
+            const words = JSON.parse(
+                rotator.getAttribute("data-words") || "[]",
+            );
+            const interval = parseInt(
+                rotator.getAttribute("data-interval") || "2500",
+            );
+            let index = 0;
+
+            if (!textEl || words.length === 0) return;
+
+            setInterval(() => {
+                // 1. Animación de salida (hacia arriba)
+                textEl.style.opacity = "0";
+                textEl.style.transform = "translateY(-10px)";
+
+                setTimeout(() => {
+                    // 2. Cambiar texto
+                    index = (index + 1) % words.length;
+                    textEl.textContent = words[index];
+
+                    // 3. Posición inicial para la entrada (desde abajo)
+                    textEl.style.transform = "translateY(10px)";
+
+                    // 4. Animación de entrada
+                    setTimeout(() => {
+                        textEl.style.opacity = "1";
+                        textEl.style.transform = "translateY(0px)";
+                    }, 50);
+                }, 500);
+            }, interval);
+        });
+    }
+
+    // Ejecución segura
+    initRotators();
+    document.addEventListener("astro:after-swap", initRotators);
+</script>

@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+const {
+	title = "Presencia digital para negocios locales",
+	description = "Ayudo a negocios locales a aparecer en Google Maps, mejorar su presencia digital y conseguir más clientes.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-MX">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="keywords"
+			content="Presencia Digital, aparecer en Google Maps, mejorar presencia digital, conseguir más clientes, negocio local, negocio digital, presencia digital, presencia digital para negocios locales, presencia digital para negocios locales, presencia digital para negocios locales, presencia digital para negocios locales"
+		/>
+		<meta name="author" content="Luis Cabrera" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://presencia-digital.com" />
+		<meta property="og:image" content="/og-image.png" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Presencia digital para negocios locales",
+				"areaServed": "Puebla",
+				"description": "Ayudo a negocios locales a aparecer en Google Maps y atraer más clientes",
+				"url": "https://presencia-digital.com",
+				"sameAs": ["https://wa.me/525649646558"]
+			}
+		</script>
+	</head>
+	<body class="bg-white text-gray-800 antialiased">
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

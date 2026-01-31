@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Solution from "../components/Solution.astro";
+import Benefits from "../components/Benefits.astro";
+import Process from "../components/Process.astro";
+import CTA from "../components/CTA.astro";
+import Pricing from "../components/Pricing.astro";
+import Services from "../components/Services.astro";
+import WhatsappFloat from "../components/WhatsappFloat.astro";
+
+const cities = {
+    cholula: "Cholula",
+    amozoc: "Amozoc",
+    atlixco: "Atlixco",
+    atenco: "Atenco",
+    atzala: "Atzala",
+    san_martin: "San Martín",
+    huejotzingo: "Huejotzingo",
+    tlaxcala: "Tlaxcala",
+    cuetzalan: "Cuetzalan",
+};
+
+export function getStaticPaths() {
+    return Object.keys(cities).map((city) => ({
+        params: { city },
+    }));
+}
+
+const cityKey = Astro.params.city;
+const cityName = cities[cityKey as keyof typeof cities];
+
+if (!cityName) {
+    throw new Error("Ciudad no válida");
+}
+---
+
+<Layout
+    title={`Presencia digital para negocios locales en ${cityName}`}
+    description={`Ayudo a negocios locales en ${cityName} a aparecer en Google Maps y conseguir más clientes.`}
+>
+    <WhatsappFloat city={cityName} />
+    <Hero city={cityName} />
+    <Problem city={cityName} />
+    <Solution city={cityName} />
+    <Services city={cityName} />
+    <Process city={cityName} />
+    <Pricing city={cityName} />
+    <Benefits city={cityName} />
+    <CTA city={cityName} />
+</Layout>
